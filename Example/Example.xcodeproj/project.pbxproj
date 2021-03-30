@@ -738,6 +738,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1423553A231475BF000884C0 /* Example.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 9J87B48WLP;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -749,6 +751,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1423553A231475BF000884C0 /* Example.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 9J87B48WLP;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

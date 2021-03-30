@@ -91,7 +91,11 @@ extension GroupGridViewController {
         collectionView.backgroundColor = .white
         collectionView.isDirectionalLockEnabled = true
         collectionView.alwaysBounceVertical = false
-        collectionView.contentInsetAdjustmentBehavior = .never
+        if #available(iOS 11.0, *) {
+            collectionView.contentInsetAdjustmentBehavior = .never
+        } else {
+            // Fallback on earlier versions
+        }
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: ImageCell.reuseIdentifier)
         view.addSubview(collectionView)
     }
@@ -107,7 +111,11 @@ extension GroupGridViewController {
             cell.imageContentMode = .scaleAspectFill
             cell.clipsToBounds = true
             cell.layer.cornerRadius = 10
-            cell.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
+            if #available(iOS 11.0, *) {
+                cell.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
+            } else {
+                // Fallback on earlier versions
+            }
             
             return cell
         }

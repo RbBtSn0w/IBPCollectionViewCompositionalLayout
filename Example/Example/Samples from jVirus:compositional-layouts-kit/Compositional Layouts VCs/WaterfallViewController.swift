@@ -109,7 +109,11 @@ extension WaterfallViewController {
             cell.imageContentMode = .scaleAspectFill
             cell.clipsToBounds = true
             cell.layer.cornerRadius = 10
-            cell.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
+            if #available(iOS 11.0, *) {
+                cell.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
+            } else {
+                // Fallback on earlier versions
+            }
 
             return cell
         }

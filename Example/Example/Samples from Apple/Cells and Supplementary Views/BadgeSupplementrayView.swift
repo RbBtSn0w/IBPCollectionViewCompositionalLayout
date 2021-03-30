@@ -36,7 +36,11 @@ class BadgeSupplementaryView: UICollectionReusableView {
 extension BadgeSupplementaryView {
     func configure() {
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.adjustsFontForContentSizeCategory = true
+        if #available(iOS 10.0, *) {
+            label.adjustsFontForContentSizeCategory = true
+        } else {
+            // Fallback on earlier versions
+        }
         addSubview(label)
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: centerXAnchor),

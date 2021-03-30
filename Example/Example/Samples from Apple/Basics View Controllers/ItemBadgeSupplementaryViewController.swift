@@ -132,6 +132,11 @@ extension ItemBadgeSupplementaryViewController {
 
 extension UIColor {
     static var cornflowerBlue: UIColor {
-        return UIColor(displayP3Red: 100.0 / 255.0, green: 149.0 / 255.0, blue: 237.0 / 255.0, alpha: 1.0)
+        if #available(iOS 10.0, *) {
+            return UIColor(displayP3Red: 100.0 / 255.0, green: 149.0 / 255.0, blue: 237.0 / 255.0, alpha: 1.0)
+        } else {
+            // Fallback on earlier versions
+            return UIColor(red: 100.0 / 255.0, green: 149.0 / 255.0, blue: 237.0 / 255.0, alpha: 1)
+        }
     }
 }

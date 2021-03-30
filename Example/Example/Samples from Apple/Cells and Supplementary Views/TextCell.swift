@@ -24,7 +24,11 @@ class TextCell: UICollectionViewCell {
 extension TextCell {
     func configure() {
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.adjustsFontForContentSizeCategory = true
+        if #available(iOS 10.0, *) {
+            label.adjustsFontForContentSizeCategory = true
+        } else {
+            // Fallback on earlier versions
+        }
         contentView.addSubview(label)
         label.font = UIFont.preferredFont(forTextStyle: .caption1)
         let inset = CGFloat(10)

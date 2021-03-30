@@ -20,11 +20,16 @@ struct ImageFactory {
     
     static func produce(using mode: Mode = .random) -> UIImage? {
         let size = CGSize(width: 10, height: 10)
-        let renderer = UIGraphicsImageRenderer(size: size)
-        return renderer.image(actions: { rendererContext in
-            UIColor.cornflowerBlue.setFill()
-            rendererContext.fill(CGRect(x: 0, y: 0, width: size.width, height: size.height))
-        })
+        if #available(iOS 10.0, *) {
+            let renderer = UIGraphicsImageRenderer(size: size)
+            return renderer.image(actions: { rendererContext in
+                UIColor.cornflowerBlue.setFill()
+                rendererContext.fill(CGRect(x: 0, y: 0, width: size.width, height: size.height))
+            })
+        } else {
+            // Fallback on earlier versions
+            return nil
+        }
     }
     
     static func resetPoitingIndex() {

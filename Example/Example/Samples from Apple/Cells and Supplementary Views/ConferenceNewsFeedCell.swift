@@ -35,9 +35,13 @@ extension ConferenceNewsFeedCell {
         bodyLabel.translatesAutoresizingMaskIntoConstraints = false
         separatorView.translatesAutoresizingMaskIntoConstraints = false
 
-        titleLabel.adjustsFontForContentSizeCategory = true
-        dateLabel.adjustsFontForContentSizeCategory = true
-        bodyLabel.adjustsFontForContentSizeCategory = true
+        if #available(iOS 10.0, *) {
+            titleLabel.adjustsFontForContentSizeCategory = true
+            dateLabel.adjustsFontForContentSizeCategory = true
+            bodyLabel.adjustsFontForContentSizeCategory = true
+        } else {
+            // Fallback on earlier versions
+        }
 
         titleLabel.numberOfLines = 0
         bodyLabel.numberOfLines = 0

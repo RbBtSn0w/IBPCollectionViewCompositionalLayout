@@ -94,8 +94,12 @@ extension MountainsViewController {
             withVisualFormat: "H:|[searchBar]|", options: [], metrics: nil, views: views))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(
             withVisualFormat: "V:[searchBar]-20-[cv]|", options: [], metrics: nil, views: views))
-        constraints.append(searchBar.topAnchor.constraint(
-            equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 1.0))
+        if #available(iOS 11.0, *) {
+            constraints.append(searchBar.topAnchor.constraint(
+                                equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 1.0))
+        } else {
+            // Fallback on earlier versions
+        }
         NSLayoutConstraint.activate(constraints)
         mountainsCollectionView = collectionView
 

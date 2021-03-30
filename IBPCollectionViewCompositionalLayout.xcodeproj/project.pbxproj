@@ -648,6 +648,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 142355292313499B000884C0 /* IBPCollectionViewCompositionalLayout.xcconfig */;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -655,6 +656,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 142355292313499B000884C0 /* IBPCollectionViewCompositionalLayout.xcconfig */;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};

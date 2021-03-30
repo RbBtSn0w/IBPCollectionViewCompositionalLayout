@@ -69,7 +69,11 @@ extension OutlineItemCell: Configurable {
         
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.adjustsFontForContentSizeCategory = true
+        if #available(iOS 10.0, *) {
+            label.adjustsFontForContentSizeCategory = true
+        } else {
+            // Fallback on earlier versions
+        }
         containerView.addSubview(label)
         
         indentContraint = containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset)
@@ -92,7 +96,13 @@ extension OutlineItemCell: Configurable {
     }
     
     func configureChevron() {
-        let rtl = effectiveUserInterfaceLayoutDirection == .rightToLeft
+        var rtl : Bool! = nil
+        if #available(iOS 10.0, *) {
+            rtl = effectiveUserInterfaceLayoutDirection == .rightToLeft
+        } else {
+            // Fallback on earlier versions
+            rtl = UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft
+        }
 //        let chevron = rtl ? "chevron.left.circle.fill" : "chevron.right.circle.fill"
 //        let chevronSelected = rtl ? "chevron.left.circle.fill" : "chevron.right.circle.fill"
 //        let circle = "circle.fill"

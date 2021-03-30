@@ -25,7 +25,11 @@ extension LabelCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(label)
         label.font = UIFont.preferredFont(forTextStyle: .body)
-        label.adjustsFontForContentSizeCategory = true
+        if #available(iOS 10.0, *) {
+            label.adjustsFontForContentSizeCategory = true
+        } else {
+            // Fallback on earlier versions
+        }
         layer.borderWidth = 1
         layer.borderColor = UIColor.systemGray2.cgColor
         let inset = CGFloat(10)

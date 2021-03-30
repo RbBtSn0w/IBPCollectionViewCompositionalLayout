@@ -33,10 +33,16 @@ extension ConferenceVideoCell {
         contentView.addSubview(categoryLabel)
 
         titleLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
-        titleLabel.adjustsFontForContentSizeCategory = true
+        
         categoryLabel.font = UIFont.preferredFont(forTextStyle: .caption2)
-        categoryLabel.adjustsFontForContentSizeCategory = true
         categoryLabel.textColor = .placeholderText
+        
+        if #available(iOS 10.0, *) {
+            titleLabel.adjustsFontForContentSizeCategory = true
+            categoryLabel.adjustsFontForContentSizeCategory = true
+        } else {
+            // Fallback on earlier versions
+        }
 
         imageView.layer.borderColor = UIColor.black.cgColor
         imageView.layer.borderWidth = 1
