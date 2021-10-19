@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "IBPNSDirectionalEdgeInsets.h"
+#import <IBPCollectionViewCompositionalLayout/IBPNSDirectionalEdgeInsets.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

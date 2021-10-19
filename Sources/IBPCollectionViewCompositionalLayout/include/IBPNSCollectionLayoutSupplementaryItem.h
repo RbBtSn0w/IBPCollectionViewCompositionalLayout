@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "IBPNSCollectionLayoutItem.h"
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutItem.h>
 
 @class IBPNSCollectionLayoutSize, IBPNSCollectionLayoutAnchor;
 

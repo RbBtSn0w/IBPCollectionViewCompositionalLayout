@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
-#import "IBPUICollectionLayoutSectionOrthogonalScrollingBehavior.h"
-#import "IBPNSCollectionLayoutVisibleItem.h"
+#import <IBPCollectionViewCompositionalLayout/IBPUICollectionLayoutSectionOrthogonalScrollingBehavior.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutVisibleItem.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

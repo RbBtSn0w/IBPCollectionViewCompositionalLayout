@@ -1,20 +1,20 @@
-#import "IBPNSCollectionLayoutAnchor.h"
-#import "IBPNSCollectionLayoutBoundarySupplementaryItem.h"
-#import "IBPNSCollectionLayoutContainer_Protocol.h"
-#import "IBPNSCollectionLayoutDecorationItem.h"
-#import "IBPNSCollectionLayoutDimension.h"
-#import "IBPNSCollectionLayoutEdgeSpacing.h"
-#import "IBPNSCollectionLayoutEnvironment_Protocol.h"
-#import "IBPNSCollectionLayoutGroup.h"
-#import "IBPNSCollectionLayoutGroupCustomItem.h"
-#import "IBPNSCollectionLayoutItem.h"
-#import "IBPNSCollectionLayoutSection.h"
-#import "IBPNSCollectionLayoutSize.h"
-#import "IBPNSCollectionLayoutSpacing.h"
-#import "IBPNSCollectionLayoutSupplementaryItem.h"
-#import "IBPNSCollectionLayoutVisibleItem.h"
-#import "IBPUICollectionViewCompositionalLayout.h"
-#import "IBPUICollectionViewCompositionalLayoutConfiguration.h"
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutAnchor.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutBoundarySupplementaryItem.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutContainer_Protocol.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutDecorationItem.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutDimension.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutEdgeSpacing.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutEnvironment_Protocol.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutGroup.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutGroupCustomItem.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutItem.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutSection.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutSize.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutSpacing.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutSupplementaryItem.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutVisibleItem.h>
+#import <IBPCollectionViewCompositionalLayout/IBPUICollectionViewCompositionalLayout.h>
+#import <IBPCollectionViewCompositionalLayout/IBPUICollectionViewCompositionalLayoutConfiguration.h>
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED < 130000
 @compatibility_alias NSCollectionLayoutAnchor IBPNSCollectionLayoutAnchor;

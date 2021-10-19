@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
-#import "IBPNSCollectionLayoutSupplementaryItem.h"
-#import "IBPNSRectAlignment.h"
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutSupplementaryItem.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSRectAlignment.h>
 
 @class IBPNSCollectionLayoutSize;
 

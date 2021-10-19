@@ -543,7 +543,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "Kishikawa Katsumi";
 				TargetAttributes = {
 					143A2D8D22F9D00200F8904D = {
@@ -724,6 +724,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1423553C231475BF000884C0 /* Project-Debug.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 			};
 			name = Debug;
 		};
@@ -731,6 +732,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1423553D231475BF000884C0 /* Project-Release.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 			};
 			name = Release;
 		};

@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
-#import "IBPNSDirectionalEdgeInsets.h"
-#import "IBPUICollectionLayoutSectionOrthogonalScrollingBehavior.h"
+#import <IBPCollectionViewCompositionalLayout/IBPNSDirectionalEdgeInsets.h>
+#import <IBPCollectionViewCompositionalLayout/IBPUICollectionLayoutSectionOrthogonalScrollingBehavior.h>
 
 @class IBPNSCollectionLayoutBoundarySupplementaryItem;
 @class IBPNSCollectionLayoutDecorationItem;

@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
-#import "IBPNSCollectionLayoutItem.h"
-#import "IBPNSCollectionLayoutGroupCustomItem.h"
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutItem.h>
+#import <IBPCollectionViewCompositionalLayout/IBPNSCollectionLayoutGroupCustomItem.h>
 
 @class IBPNSCollectionLayoutSpacing;
 @class IBPNSCollectionLayoutSupplementaryItem;
