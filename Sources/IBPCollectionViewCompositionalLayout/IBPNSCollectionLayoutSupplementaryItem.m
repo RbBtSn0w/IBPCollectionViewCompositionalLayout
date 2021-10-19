@@ -42,8 +42,8 @@
 - (instancetype)initWithSize:(IBPNSCollectionLayoutSize *)size
                contentInsets:(IBPNSDirectionalEdgeInsets)contentInsets
                  elementKind:(NSString *)elementKind
-             containerAnchor:(IBPNSCollectionLayoutAnchor *)containerAnchor
-                  itemAnchor:(IBPNSCollectionLayoutAnchor *)itemAnchor
+             containerAnchor:(nullable IBPNSCollectionLayoutAnchor *)containerAnchor
+                  itemAnchor:(nullable IBPNSCollectionLayoutAnchor *)itemAnchor
                       zIndex:(NSInteger)zIndex {
     self = [super initWithLayoutSize:size supplementaryItems:@[]];
     if (self) {

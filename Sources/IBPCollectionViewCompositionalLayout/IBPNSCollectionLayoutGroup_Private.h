@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readwrite, copy) NSArray<IBPNSCollectionLayoutItem *> *subitems;
 @property (nonatomic, readwrite) IBPGroupLayoutDirection layoutDirection;
 @property (nonatomic, readwrite) NSInteger count;
-@property (nonatomic, readwrite, copy) IBPNSCollectionLayoutGroupCustomItemProvider customGroupItemProvider;
+@property (nonatomic, readwrite, copy, nullable) IBPNSCollectionLayoutGroupCustomItemProvider customGroupItemProvider;
 
 - (IBPNSCollectionLayoutSize *)effectiveSizeForSize:(IBPNSCollectionLayoutSize *)size
                                            count:(NSInteger)count
