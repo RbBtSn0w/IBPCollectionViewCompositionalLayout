@@ -112,7 +112,7 @@ static IBPNSDirectionalRectEdge EdgesFromAnchorPoint(CGPoint anchorPoint);
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<NSCollectionLayoutAnchor %p: edges=%lu; offset=%@; anchorPoint=%@>", self, (unsigned long)self.edges, NSStringFromCGPoint(self.offset), NSStringFromCGPoint(self.offset)];
+    return [NSString stringWithFormat:@"<NSCollectionLayoutAnchor %p: edges=%lu; offset=%@; anchorPoint=%@>", self, (unsigned long)self.edges, NSStringFromCGPoint(self.offset), NSStringFromCGPoint(self.anchorPoint)];
 }
 
 @end
