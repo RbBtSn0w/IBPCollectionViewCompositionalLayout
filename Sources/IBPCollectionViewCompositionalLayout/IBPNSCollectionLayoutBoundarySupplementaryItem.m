@@ -2,22 +2,12 @@
 #import "IBPNSCollectionLayoutItem_Private.h"
 #import "IBPNSCollectionLayoutSupplementaryItem_Private.h"
 #import "IBPNSRectAlignment.h"
+#import "IBPNSCollectionLayoutAnchor_Private.h"
 
 @interface IBPNSCollectionLayoutBoundarySupplementaryItem()
 
 @property (nonatomic, readwrite) IBPNSRectAlignment alignment;
 @property (nonatomic, readwrite) CGPoint offset;
-
-- (instancetype)initWithSize:(IBPNSCollectionLayoutSize *)size
-               contentInsets:(IBPNSDirectionalEdgeInsets)contentInsets
-                 elementKind:(NSString *)elementKind
-             containerAnchor:(nullable IBPNSCollectionLayoutAnchor *)containerAnchor
-                  itemAnchor:(nullable IBPNSCollectionLayoutAnchor *)itemAnchor
-                      zIndex:(NSInteger)zIndex
-                   alignment:(IBPNSRectAlignment)alignment
-                      offset:(CGPoint)offset
-             extendsBoundary:(BOOL)extendsBoundary
-          pinToVisibleBounds:(BOOL)pinToVisibleBounds;
 
 @end
 
@@ -63,7 +53,7 @@
     return [self initWithSize:layoutSize
                 contentInsets:IBPNSDirectionalEdgeInsetsZero
                   elementKind:elementKind
-              containerAnchor:nil
+              containerAnchor:[IBPNSCollectionLayoutAnchor layoutAnchorWithAnchorPoint:CGPointZero]
                    itemAnchor:nil
                        zIndex:1
                     alignment:alignment
@@ -75,7 +65,7 @@
 - (instancetype)initWithSize:(IBPNSCollectionLayoutSize *)size
                contentInsets:(IBPNSDirectionalEdgeInsets)contentInsets
                  elementKind:(NSString *)elementKind
-             containerAnchor:(nullable IBPNSCollectionLayoutAnchor *)containerAnchor
+             containerAnchor:(IBPNSCollectionLayoutAnchor *)containerAnchor
                   itemAnchor:(nullable IBPNSCollectionLayoutAnchor *)itemAnchor
                       zIndex:(NSInteger)zIndex
                    alignment:(IBPNSRectAlignment)alignment
