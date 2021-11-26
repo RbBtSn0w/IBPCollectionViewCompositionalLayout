@@ -7,8 +7,6 @@ static IBPNSDirectionalRectEdge EdgesFromAnchorPoint(CGPoint anchorPoint);
 
 @property (nonatomic, readwrite) IBPNSDirectionalRectEdge edges;
 @property (nonatomic, readwrite) CGPoint offset;
-@property (nonatomic, readwrite) BOOL isAbsoluteOffset;
-@property (nonatomic, readwrite) BOOL isFractionalOffset;
 
 @property (nonatomic) CGPoint anchorPoint;
 @property (nonatomic) BOOL offsetIsUnitOffset;
