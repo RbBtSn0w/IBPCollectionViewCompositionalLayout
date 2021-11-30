@@ -151,13 +151,19 @@
     }
 
     IBPNSCollectionLayoutContainer *collectionContainer;
-    if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
-        IBPNSDirectionalEdgeInsets insets = IBPNSDirectionalEdgeInsetsMake(0, collectionContentInset.left, 0, collectionContentInset.right);
-        collectionContainer = [[IBPNSCollectionLayoutContainer alloc] initWithContentSize:collectionViewBounds.size contentInsets:insets];
-    }
-    if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
-        IBPNSDirectionalEdgeInsets insets = IBPNSDirectionalEdgeInsetsMake(collectionContentInset.top, 0, collectionContentInset.bottom, 0);
-        collectionContainer = [[IBPNSCollectionLayoutContainer alloc] initWithContentSize:collectionViewBounds.size contentInsets:insets];
+    switch (self.scrollDirection) {
+        case UICollectionViewScrollDirectionVertical:
+        {
+            IBPNSDirectionalEdgeInsets insets = IBPNSDirectionalEdgeInsetsMake(0, collectionContentInset.left, 0, collectionContentInset.right);
+            collectionContainer = [[IBPNSCollectionLayoutContainer alloc] initWithContentSize:collectionViewBounds.size contentInsets:insets];
+        }
+            break;
+        case UICollectionViewScrollDirectionHorizontal:
+        {
+            IBPNSDirectionalEdgeInsets insets = IBPNSDirectionalEdgeInsetsMake(collectionContentInset.top, 0, collectionContentInset.bottom, 0);
+            collectionContainer = [[IBPNSCollectionLayoutContainer alloc] initWithContentSize:collectionViewBounds.size contentInsets:insets];
+        }
+            break;
     }
 
     IBPNSCollectionLayoutEnvironment *environment = [[IBPNSCollectionLayoutEnvironment alloc] init];

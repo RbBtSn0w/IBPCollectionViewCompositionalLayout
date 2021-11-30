@@ -42,7 +42,7 @@
     return self;
 }
 
-- (void)solveForContainer:(nullable IBPNSCollectionLayoutContainer *)container traitCollection:(UITraitCollection *)traitCollection {
+- (void)solveForContainer:(IBPNSCollectionLayoutContainer *)container traitCollection:(UITraitCollection *)traitCollection {
     CGSize collectionContentSize = container.effectiveContentSize;
 
     IBPNSDirectionalEdgeInsets sectionContentInsets = self.layoutSection.contentInsets;
