@@ -414,7 +414,7 @@
     return layoutAttributes;
 }
 
-- (IBPNSCollectionLayoutItem *)layoutItemAtIndexPath:(NSIndexPath *)indexPath {
+- (IBPNSCollectionLayoutItem *_Nullable)layoutItemAtIndexPath:(NSIndexPath *)indexPath {
     NSArray<IBPCollectionCompositionalLayoutSolverResult *> *results = self.results;
     IBPCollectionCompositionalLayoutSolverResult *result = [results objectAtIndex:indexPath.item % results.count];
     return result.layoutItem;

@@ -212,7 +212,7 @@
                 cachedItemAttributes[indexPath] = cellAttributes;
             }
 
-            IBPNSCollectionLayoutItem *layoutItem = [solver layoutItemAtIndexPath:indexPath];
+            IBPNSCollectionLayoutItem *_Nullable layoutItem = [solver layoutItemAtIndexPath:indexPath];
             if (layoutSection.scrollsOrthogonally) {
                 CGRect frame = CGRectZero;
                 switch (self.scrollDirection) {

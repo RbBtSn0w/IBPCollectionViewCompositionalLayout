@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
           traitCollection:(UITraitCollection *)traitCollection;
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath;
-- (IBPNSCollectionLayoutItem *)layoutItemAtIndexPath:(NSIndexPath *)indexPath;
+- (IBPNSCollectionLayoutItem *_Nullable)layoutItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
