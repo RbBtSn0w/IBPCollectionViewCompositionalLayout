@@ -106,10 +106,8 @@
         contentFrame.origin.y += item.edgeSpacing.top.spacing;
 
         CGSize itemSize = [item.layoutSize effectiveSizeForContainer:container];
-        IBPNSCollectionLayoutContainer *itemContainer = [[IBPNSCollectionLayoutContainer alloc] initWithContentSize:itemSize contentInsets:contentInsets];
 
         if (item.isGroup) {
-            IBPNSCollectionLayoutGroup *nestedGroup = (IBPNSCollectionLayoutGroup *)item;
 
             if (group.isHorizontalGroup) {
                 if (floor(CGRectGetMaxX(contentFrame)) > floor(CGRectGetMaxX(containerFrame))) {
@@ -124,6 +122,9 @@
                 itemSize.height = (CGRectGetHeight(containerFrame) - interItemFixedSpacing * (group.count - 1)) / group.count;
             }
 
+            IBPNSCollectionLayoutGroup *nestedGroup = (IBPNSCollectionLayoutGroup *)item;
+            IBPNSCollectionLayoutContainer *itemContainer = [[IBPNSCollectionLayoutContainer alloc] initWithContentSize:itemSize contentInsets:contentInsets];
+            
             CGRect nestedContainerFrame = containerFrame;
             nestedContainerFrame.origin = contentFrame.origin;
             nestedContainerFrame.size = itemSize;
