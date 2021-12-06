@@ -108,7 +108,9 @@
         CGSize itemSize = [item.layoutSize effectiveSizeForContainer:container];
 
         if (item.isGroup) {
-
+            
+            IBPNSCollectionLayoutContainer *itemContainer = [[IBPNSCollectionLayoutContainer alloc] initWithContentSize:itemSize contentInsets:contentInsets];
+            
             if (group.isHorizontalGroup) {
                 if (floor(CGRectGetMaxX(contentFrame)) > floor(CGRectGetMaxX(containerFrame))) {
                     return;
@@ -123,7 +125,6 @@
             }
 
             IBPNSCollectionLayoutGroup *nestedGroup = (IBPNSCollectionLayoutGroup *)item;
-            IBPNSCollectionLayoutContainer *itemContainer = [[IBPNSCollectionLayoutContainer alloc] initWithContentSize:itemSize contentInsets:contentInsets];
             
             CGRect nestedContainerFrame = containerFrame;
             nestedContainerFrame.origin = contentFrame.origin;
