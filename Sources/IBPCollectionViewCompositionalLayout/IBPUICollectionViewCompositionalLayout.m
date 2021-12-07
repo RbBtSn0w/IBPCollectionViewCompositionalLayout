@@ -43,6 +43,10 @@
 
 @end
 
+NS_INLINE NSString * kindKey(NSString* elementKind, NSInteger section, NSInteger index) {
+    return [NSString stringWithFormat:@"%@-%zd-%zd", elementKind, section, index];
+}
+
 @implementation IBPUICollectionViewCompositionalLayout
 
 - (instancetype)initWithSection:(IBPNSCollectionLayoutSection *)section {
@@ -254,7 +258,7 @@
                 attributes.frame = frame;
                 attributes.zIndex = supplementaryItem.zIndex;
 
-                supplementaryAttributes[[NSString stringWithFormat:@"%@-%zd-%zd", supplementaryItem.elementKind, indexPath.section, indexPath.item]] = attributes;
+                supplementaryAttributes[kindKey(supplementaryItem.elementKind, indexPath.section, indexPath.item)] = attributes;
             }];
         }
 
@@ -400,7 +404,7 @@
             }
 
             contentFrame = CGRectUnion(contentFrame, layoutAttributes.frame);
-            cachedSupplementaryAttributes[[NSString stringWithFormat:@"%@-%zd-%d", boundaryItem.elementKind, sectionIndex, 0]] = layoutAttributes;
+            cachedSupplementaryAttributes[kindKey(boundaryItem.elementKind, sectionIndex, 0)] = layoutAttributes;
             [globalSupplementaryItems addObject:boundaryItem];
 
             if (boundaryItem.pinToVisibleBounds) {
@@ -668,7 +672,7 @@
                     attributes.frame = supplementaryFrame;
                     attributes.zIndex = supplementaryItem.zIndex;
 
-                    supplementaryAttributes[[NSString stringWithFormat:@"%@-%zd-%zd", supplementaryItem.elementKind, indexPath.section, indexPath.item]] = attributes;
+                    supplementaryAttributes[kindKey(supplementaryItem.elementKind, indexPath.section, indexPath.item)] = attributes;
 
                     [layoutAttributes addObject:attributes];
                 }];
@@ -737,11 +741,11 @@
 }
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath {
-    return cachedSupplementaryAttributes[[NSString stringWithFormat:@"%@-%zd-%zd", elementKind, indexPath.section, indexPath.item]];
+    return cachedSupplementaryAttributes[kindKey(elementKind, indexPath.section, indexPath.item)];
 }
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForDecorationViewOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath {
-    return cachedDecorationAttributes[[NSString stringWithFormat:@"%@-%zd-%zd", elementKind, indexPath.section, indexPath.item]];
+    return cachedDecorationAttributes[kindKey(elementKind, indexPath.section, indexPath.item)];
 }
 
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
