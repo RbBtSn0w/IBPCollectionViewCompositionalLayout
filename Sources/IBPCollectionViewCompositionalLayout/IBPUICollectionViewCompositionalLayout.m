@@ -30,11 +30,11 @@
     NSMutableArray<IBPCollectionCompositionalLayoutSolver *> *solvers;
 }
 
-@property (nonatomic, copy) IBPNSCollectionLayoutSection *layoutSection;
-@property (nonatomic) IBPUICollectionViewCompositionalLayoutSectionProvider layoutSectionProvider;
+@property (nonatomic, copy, nullable) IBPNSCollectionLayoutSection *layoutSection;
+@property (nonatomic, copy, nullable) IBPUICollectionViewCompositionalLayoutSectionProvider layoutSectionProvider;
 
-@property (nonatomic, weak) IBPUICollectionViewCompositionalLayout *parent;
-@property (nonatomic, copy) IBPNSCollectionLayoutSection *containerSection;
+@property (nonatomic, weak, nullable) IBPUICollectionViewCompositionalLayout *parent;
+@property (nonatomic, copy, nullable) IBPNSCollectionLayoutSection *containerSection;
 
 @property (nonatomic, readonly) UICollectionViewScrollDirection scrollDirection;
 @property (nonatomic) BOOL hasPinnedSupplementaryItems;
@@ -86,7 +86,7 @@ NS_INLINE NSString * kindKey(NSString* elementKind, NSInteger section, NSInteger
 }
 
 - (instancetype)initWithSection:(IBPNSCollectionLayoutSection *)section
-                sectionProvider:(IBPUICollectionViewCompositionalLayoutSectionProvider)sectionProvider
+                sectionProvider:(IBPUICollectionViewCompositionalLayoutSectionProvider _Nullable)sectionProvider
                   configuration:(IBPUICollectionViewCompositionalLayoutConfiguration *)configuration {
     self = [super init];
     if (self) {
