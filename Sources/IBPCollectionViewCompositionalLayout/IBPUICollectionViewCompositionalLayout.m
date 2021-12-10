@@ -263,7 +263,6 @@ NS_INLINE NSString * kindKey(NSString* elementKind, NSInteger section, NSInteger
         }
 
         if (layoutSection.scrollsOrthogonally) {
-            IBPCollectionViewOrthogonalScrollerSectionController *controller = orthogonalScrollerSectionControllers[@(sectionIndex)];
 
             UICollectionView *scrollView = [self setupOrthogonalScrollViewForSection:layoutSection];
             if (@available(iOS 11.0, *)) {
@@ -301,7 +300,7 @@ NS_INLINE NSString * kindKey(NSString* elementKind, NSInteger section, NSInteger
 
             [collectionView addSubview:scrollView];
 
-            controller = [[IBPCollectionViewOrthogonalScrollerSectionController alloc] initWithSectionIndex:sectionIndex collectionView:self.collectionView scrollView:scrollView];
+            IBPCollectionViewOrthogonalScrollerSectionController *controller = [[IBPCollectionViewOrthogonalScrollerSectionController alloc] initWithSectionIndex:sectionIndex collectionView:self.collectionView scrollView:scrollView];
             orthogonalScrollerSectionControllers[@(sectionIndex)] = controller;
         }
 
