@@ -413,7 +413,9 @@ NS_INLINE NSString * kindKey(NSString* elementKind, NSInteger section, NSInteger
         }
 
         for (IBPNSCollectionLayoutDecorationItem *decorationItem in layoutSection.decorationItems) {
-            UICollectionViewLayoutAttributes *layoutAttributes = [UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:decorationItem.elementKind withIndexPath:[NSIndexPath indexPathForItem:0 inSection:sectionIndex]];
+            NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:sectionIndex];
+            NSString *elementKind = decorationItem.elementKind;
+            UICollectionViewLayoutAttributes *layoutAttributes = [UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:elementKind withIndexPath:indexPath];
 
             CGRect frame = CGRectZero;
             frame.origin = sectionOrigin;
@@ -434,8 +436,7 @@ NS_INLINE NSString * kindKey(NSString* elementKind, NSInteger section, NSInteger
             layoutAttributes.zIndex = decorationItem.zIndex;
 
             layoutAttributes.frame = frame;
-            NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:sectionIndex];
-            cachedDecorationAttributes[indexPath] = layoutAttributes;
+            cachedDecorationAttributes[kindKey(elementKind, indexPath.section, indexPath.item)] = layoutAttributes;
         }
 
         CGRect insetsContentFrame = contentFrame;
