@@ -1,12 +1,13 @@
 #import "IBPNSCollectionLayoutSupplementaryItem_Private.h"
 #import "IBPNSCollectionLayoutItem_Private.h"
 
+FOUNDATION_IMPORT BOOL const _IBPAvailable(void);
 @implementation IBPNSCollectionLayoutSupplementaryItem
 
 + (instancetype)supplementaryItemWithLayoutSize:(IBPNSCollectionLayoutSize *)layoutSize
                                     elementKind:(NSString *)elementKind
                                 containerAnchor:(IBPNSCollectionLayoutAnchor *)containerAnchor {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [NSClassFromString(@"NSCollectionLayoutSupplementaryItem") supplementaryItemWithLayoutSize:layoutSize
                                                                                               elementKind:elementKind
                                                                                           containerAnchor:containerAnchor];
@@ -24,7 +25,7 @@
                                     elementKind:(NSString *)elementKind
                                 containerAnchor:(IBPNSCollectionLayoutAnchor *)containerAnchor
                                      itemAnchor:(IBPNSCollectionLayoutAnchor *)itemAnchor {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [NSClassFromString(@"NSCollectionLayoutSupplementaryItem") supplementaryItemWithLayoutSize:layoutSize
                                                                                               elementKind:elementKind
                                                                                           containerAnchor:containerAnchor

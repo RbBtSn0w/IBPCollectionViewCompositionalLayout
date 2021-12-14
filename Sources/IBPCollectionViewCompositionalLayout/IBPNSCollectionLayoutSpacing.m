@@ -1,5 +1,6 @@
 #import "IBPNSCollectionLayoutSpacing_Private.h"
 
+FOUNDATION_IMPORT BOOL const _IBPAvailable(void);
 @interface IBPNSCollectionLayoutSpacing()
 
 @property (nonatomic, readwrite) CGFloat spacing;
@@ -11,7 +12,7 @@
 @implementation IBPNSCollectionLayoutSpacing
 
 + (instancetype)flexibleSpacing:(CGFloat)flexibleSpacing {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [NSClassFromString(@"NSCollectionLayoutSpacing") flexibleSpacing:flexibleSpacing];
     } else {
         return [[self alloc] initWithSpacing:flexibleSpacing isFlexible:YES];
@@ -19,7 +20,7 @@
 }
 
 + (instancetype)fixedSpacing:(CGFloat)fixedSpacing {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [NSClassFromString(@"NSCollectionLayoutSpacing") fixedSpacing:fixedSpacing];
     } else {
         return [[self alloc] initWithSpacing:fixedSpacing isFlexible:NO];

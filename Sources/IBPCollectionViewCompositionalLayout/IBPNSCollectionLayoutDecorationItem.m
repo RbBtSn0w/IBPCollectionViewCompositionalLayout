@@ -1,5 +1,6 @@
 #import "IBPNSCollectionLayoutDecorationItem.h"
 
+FOUNDATION_IMPORT BOOL const _IBPAvailable(void);
 @interface IBPNSCollectionLayoutDecorationItem()
 
 @property (nonatomic, readwrite) NSString *elementKind;
@@ -9,7 +10,7 @@
 @implementation IBPNSCollectionLayoutDecorationItem
 
 + (instancetype)backgroundDecorationItemWithElementKind:(NSString *)elementKind {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [NSClassFromString(@"NSCollectionLayoutDecorationItem") backgroundDecorationItemWithElementKind:elementKind];
     } else {
         return [[self alloc] initWithElementKind:elementKind];

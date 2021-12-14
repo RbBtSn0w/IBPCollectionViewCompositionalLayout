@@ -5,10 +5,11 @@
 #import "IBPNSCollectionLayoutSize_Private.h"
 #import "IBPNSCollectionLayoutSpacing.h"
 
+FOUNDATION_IMPORT BOOL const _IBPAvailable(void);
 @implementation IBPNSCollectionLayoutItem
 
 + (instancetype)itemWithLayoutSize:(IBPNSCollectionLayoutSize *)layoutSize {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [NSClassFromString(@"NSCollectionLayoutItem") itemWithLayoutSize:layoutSize];
     } else {
         return [self itemWithLayoutSize:layoutSize supplementaryItems:@[]];
@@ -17,7 +18,7 @@
 
 + (instancetype)itemWithLayoutSize:(IBPNSCollectionLayoutSize *)layoutSize
                 supplementaryItems:(NSArray<IBPNSCollectionLayoutSupplementaryItem *> *)supplementaryItems {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [NSClassFromString(@"NSCollectionLayoutItem") itemWithLayoutSize:layoutSize supplementaryItems:supplementaryItems];
     } else {
         return [[self alloc] initWithLayoutSize:layoutSize supplementaryItems:supplementaryItems];

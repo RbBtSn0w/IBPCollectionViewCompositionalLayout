@@ -1,5 +1,6 @@
 #import "IBPNSCollectionLayoutDimension.h"
 
+FOUNDATION_IMPORT BOOL const _IBPAvailable(void);
 typedef NS_ENUM(NSUInteger, IBPNSCollectionLayoutDimensionSemantic) {
     IBPNSCollectionLayoutDimensionSemanticFractionalWidth,
     IBPNSCollectionLayoutDimensionSemanticFractionalHeight,
@@ -17,7 +18,7 @@ typedef NS_ENUM(NSUInteger, IBPNSCollectionLayoutDimensionSemantic) {
 @implementation IBPNSCollectionLayoutDimension
 
 + (instancetype)fractionalWidthDimension:(CGFloat)fractionalWidth {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [NSClassFromString(@"NSCollectionLayoutDimension") fractionalWidthDimension:fractionalWidth];
     } else {
         return [self dimensionWithDimension:fractionalWidth semantic:IBPNSCollectionLayoutDimensionSemanticFractionalWidth];
@@ -25,7 +26,7 @@ typedef NS_ENUM(NSUInteger, IBPNSCollectionLayoutDimensionSemantic) {
 }
 
 + (instancetype)fractionalHeightDimension:(CGFloat)fractionalHeight {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [NSClassFromString(@"NSCollectionLayoutDimension") fractionalHeightDimension:fractionalHeight];
     } else {
         return [self dimensionWithDimension:fractionalHeight semantic:IBPNSCollectionLayoutDimensionSemanticFractionalHeight];
@@ -33,7 +34,7 @@ typedef NS_ENUM(NSUInteger, IBPNSCollectionLayoutDimensionSemantic) {
 }
 
 + (instancetype)absoluteDimension:(CGFloat)absoluteDimension {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [NSClassFromString(@"NSCollectionLayoutDimension") absoluteDimension:absoluteDimension];
     } else {
         return [self dimensionWithDimension:absoluteDimension semantic:IBPNSCollectionLayoutDimensionSemanticAbsolute];
@@ -41,7 +42,7 @@ typedef NS_ENUM(NSUInteger, IBPNSCollectionLayoutDimensionSemantic) {
 }
 
 + (instancetype)estimatedDimension:(CGFloat)estimatedDimension {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [NSClassFromString(@"NSCollectionLayoutDimension") estimatedDimension:estimatedDimension];
     } else {
         return [self dimensionWithDimension:estimatedDimension semantic:IBPNSCollectionLayoutDimensionSemanticEstimated];

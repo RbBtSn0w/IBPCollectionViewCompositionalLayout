@@ -4,6 +4,7 @@
 #import "IBPNSRectAlignment.h"
 #import "IBPNSCollectionLayoutAnchor_Private.h"
 
+FOUNDATION_IMPORT BOOL const _IBPAvailable(void);
 @interface IBPNSCollectionLayoutBoundarySupplementaryItem()
 
 @property (nonatomic, readwrite) IBPNSRectAlignment alignment;
@@ -16,7 +17,7 @@
 + (instancetype)boundarySupplementaryItemWithLayoutSize:(IBPNSCollectionLayoutSize *)layoutSize
                                             elementKind:(NSString *)elementKind
                                               alignment:(IBPNSRectAlignment)alignment {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [NSClassFromString(@"NSCollectionLayoutBoundarySupplementaryItem") boundarySupplementaryItemWithLayoutSize:layoutSize
                                                                                                               elementKind:elementKind
                                                                                                                 alignment:alignment
@@ -33,7 +34,7 @@
                                             elementKind:(NSString *)elementKind
                                               alignment:(IBPNSRectAlignment)alignment
                                          absoluteOffset:(CGPoint)absoluteOffset {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [NSClassFromString(@"NSCollectionLayoutBoundarySupplementaryItem") boundarySupplementaryItemWithLayoutSize:layoutSize
                                                                                                               elementKind:elementKind
                                                                                                                 alignment:alignment

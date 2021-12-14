@@ -1,6 +1,7 @@
 #import "IBPNSCollectionLayoutEdgeSpacing_Private.h"
 #import "IBPNSCollectionLayoutSpacing_Private.h"
 
+FOUNDATION_IMPORT BOOL const _IBPAvailable(void);
 @interface IBPNSCollectionLayoutEdgeSpacing()
 
 @property (nonatomic, readwrite) IBPNSCollectionLayoutSpacing *leading;
@@ -18,7 +19,7 @@
                               top:(IBPNSCollectionLayoutSpacing *)top
                          trailing:(IBPNSCollectionLayoutSpacing *)trailing
                            bottom:(IBPNSCollectionLayoutSpacing *)bottom {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [NSClassFromString(@"NSCollectionLayoutEdgeSpacing") spacingForLeading:leading
                                                                                   top:top
                                                                              trailing:trailing

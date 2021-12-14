@@ -2,10 +2,11 @@
 #import "IBPNSCollectionLayoutSection_Private.h"
 #import "IBPNSCollectionLayoutGroup_Private.h"
 
+FOUNDATION_IMPORT BOOL const _IBPAvailable(void);
 @implementation IBPNSCollectionLayoutSection
 
 + (instancetype)sectionWithGroup:(IBPNSCollectionLayoutGroup *)group {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [NSClassFromString(@"NSCollectionLayoutSection") sectionWithGroup:group];
     } else {
         return [[self alloc] initWithGroup:group];

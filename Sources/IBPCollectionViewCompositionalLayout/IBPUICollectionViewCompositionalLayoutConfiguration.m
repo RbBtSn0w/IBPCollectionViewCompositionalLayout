@@ -1,5 +1,13 @@
 #import "IBPUICollectionViewCompositionalLayoutConfiguration_Private.h"
 
+BOOL const _IBPAvailable(void) {
+    if (@available(iOS 13, *)) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 @implementation IBPUICollectionViewCompositionalLayoutConfiguration
 
 + (instancetype)defaultConfiguration {
@@ -17,7 +25,7 @@
 }
 
 - (instancetype)init {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [[NSClassFromString(@"UICollectionViewCompositionalLayoutConfiguration") alloc] init];
     } else {
         self = [super init];

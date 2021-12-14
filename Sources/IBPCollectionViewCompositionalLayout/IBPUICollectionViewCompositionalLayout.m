@@ -17,6 +17,7 @@
 #import "IBPNSCollectionLayoutSupplementaryItem_Private.h"
 #import "IBPUICollectionViewCompositionalLayoutConfiguration_Private.h"
 
+FOUNDATION_IMPORT BOOL const _IBPAvailable(void);
 @interface IBPUICollectionViewCompositionalLayout()<UICollectionViewDelegate> {
     NSMutableDictionary<NSIndexPath *, UICollectionViewLayoutAttributes *> *cachedItemAttributes;
     NSMutableDictionary<NSString *, UICollectionViewLayoutAttributes *> *cachedSupplementaryAttributes;
@@ -50,7 +51,7 @@ NS_INLINE NSString * kindKey(NSString* elementKind, NSInteger section, NSInteger
 @implementation IBPUICollectionViewCompositionalLayout
 
 - (instancetype)initWithSection:(IBPNSCollectionLayoutSection *)section {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [[NSClassFromString(@"UICollectionViewCompositionalLayout") alloc] initWithSection:section];
     } else {
         IBPUICollectionViewCompositionalLayoutConfiguration *configuration = [IBPUICollectionViewCompositionalLayoutConfiguration defaultConfiguration];
@@ -60,7 +61,7 @@ NS_INLINE NSString * kindKey(NSString* elementKind, NSInteger section, NSInteger
 
 - (instancetype)initWithSection:(IBPNSCollectionLayoutSection *)section
                   configuration:(IBPUICollectionViewCompositionalLayoutConfiguration *)configuration {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [[NSClassFromString(@"UICollectionViewCompositionalLayout") alloc] initWithSection:section configuration:configuration];
     } else {
         return [self initWithSection:section sectionProvider:nil configuration:configuration];
@@ -68,7 +69,7 @@ NS_INLINE NSString * kindKey(NSString* elementKind, NSInteger section, NSInteger
 }
 
 - (instancetype)initWithSectionProvider:(IBPUICollectionViewCompositionalLayoutSectionProvider)sectionProvider {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [[NSClassFromString(@"UICollectionViewCompositionalLayout") alloc] initWithSectionProvider:sectionProvider];
     } else {
         IBPUICollectionViewCompositionalLayoutConfiguration *configuration = [IBPUICollectionViewCompositionalLayoutConfiguration defaultConfiguration];
@@ -78,7 +79,7 @@ NS_INLINE NSString * kindKey(NSString* elementKind, NSInteger section, NSInteger
 
 - (instancetype)initWithSectionProvider:(IBPUICollectionViewCompositionalLayoutSectionProvider)sectionProvider
                           configuration:(IBPUICollectionViewCompositionalLayoutConfiguration *)configuration {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [[NSClassFromString(@"UICollectionViewCompositionalLayout") alloc] initWithSectionProvider:sectionProvider configuration:configuration];
     } else {
         return [self initWithSection:nil sectionProvider:sectionProvider configuration:configuration];

@@ -2,6 +2,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+FOUNDATION_EXTERN BOOL const _IBPAvailable(void);
+
 @interface IBPUICollectionViewCompositionalLayoutConfiguration()
 
 + (instancetype)defaultConfiguration;

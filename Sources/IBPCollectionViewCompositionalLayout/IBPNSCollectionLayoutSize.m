@@ -2,6 +2,7 @@
 #import "IBPNSCollectionLayoutContainer.h"
 #import "IBPNSCollectionLayoutDimension.h"
 
+FOUNDATION_IMPORT BOOL const _IBPAvailable(void);
 @interface IBPNSCollectionLayoutSize()
 
 @property (nonatomic, readwrite) IBPNSCollectionLayoutDimension *widthDimension;
@@ -13,7 +14,7 @@
 
 + (instancetype)sizeWithWidthDimension:(IBPNSCollectionLayoutDimension *)width
                        heightDimension:(IBPNSCollectionLayoutDimension *)height {
-    if (@available(iOS 13, *)) {
+    if (_IBPAvailable()) {
         return [NSClassFromString(@"NSCollectionLayoutSize") sizeWithWidthDimension:width heightDimension:height];
     } else {
         return [[self alloc] initWithWidthDimension:width heightDimension:height];
